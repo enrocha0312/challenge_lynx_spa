@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("LynxAPI")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("LynxUX")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a34e494a592ce34de6f20f58444e73a2c98be43")]
-[assembly: System.Reflection.AssemblyProductAttribute("LynxAPI")]
-[assembly: System.Reflection.AssemblyTitleAttribute("LynxAPI")]
+[assembly: System.Reflection.AssemblyProductAttribute("LynxUX")]
+[assembly: System.Reflection.AssemblyTitleAttribute("LynxUX")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.

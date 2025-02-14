@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lynx.UX", "Lynx.UX\Lynx.UX.csproj", "{526E5657-7DEB-42DB-A93F-C4F97AE953FE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LynxAPI", "LynxAPI\LynxAPI.csproj", "{7296F77C-C036-4D28-AA7F-71C61F4EB997}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LynxUX", "LynxUX\LynxUX.csproj", "{9CC7D3F5-94AB-4DB5-A7AC-F5F4A1D3B878}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{526E5657-7DEB-42DB-A93F-C4F97AE953FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{526E5657-7DEB-42DB-A93F-C4F97AE953FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{526E5657-7DEB-42DB-A93F-C4F97AE953FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{526E5657-7DEB-42DB-A93F-C4F97AE953FE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7296F77C-C036-4D28-AA7F-71C61F4EB997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7296F77C-C036-4D28-AA7F-71C61F4EB997}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7296F77C-C036-4D28-AA7F-71C61F4EB997}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7296F77C-C036-4D28-AA7F-71C61F4EB997}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CC7D3F5-94AB-4DB5-A7AC-F5F4A1D3B878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CC7D3F5-94AB-4DB5-A7AC-F5F4A1D3B878}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CC7D3F5-94AB-4DB5-A7AC-F5F4A1D3B878}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CC7D3F5-94AB-4DB5-A7AC-F5F4A1D3B878}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

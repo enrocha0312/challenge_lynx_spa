@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "Cadastro de Equipamentos";
+}
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <title>Lynx Spa Application</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin: auto;
+            padding: 10px;
+            background-color: #f0f8ff;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        h2 {
+            text-align: center;
+            padding: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+            .btn-container button {
+                width: 200px;
+                margin-bottom: 5px;
+                background-color: #4CAF50;
+                color: white;
+            }
+
+                .btn-container button:hover {
+                    opacity: 0.8;
+                }
+    </style>
+</head>
+<body>
+    <h2 style="background-color:powderblue;">Cadastro de Equipamentos</h2>
+
+    <form asp-action="SalvarEquipamento" method="post">
+        <label for="inst"><b>Instalação</b></label>
+        <input type="text" name="Instalacao" id="inst" maxlength="10" required><br>
+
+        <label for="fab"><b>Fabricante</b></label>
+        <input type="text" name="Fabricante" id="fab" maxlength="15" required><br>
+
+        <label for="opr"><b>Operadora</b></label>
+        <select name="Operadora" id="opr" required>
+            <option value="">Selecione uma operadora</option>
+            <option value="Claro">Claro</option>
+            <option value="Tim">Tim</option>
+            <option value="Vivo">Vivo</option>
+        </select><br>
+
+        <label for="lote"><b>Lote</b></label>
+        <input type="number" name="Lote" id="lote" min="1" required><br>
+
+        <label for="mod"><b>Modelo</b></label>
+        <input type="number" name="Modelo" id="mod" min="1" required><br>
+
+        <label for="ver"><b>Versão</b></label>
+        <input type="number" name="Versao" id="ver" min="1" required><br>
+
+        <div class="btn-container">
+            <button type="submit">Cadastrar</button>
+            <button type="submit" asp-action="AlterarEquipamento">Alterar</button>
+            <button type="submit" asp-action="MostrarTodos">Mostrar Todos</button>
+            <button type="submit" asp-action="BuscarEquipamento">Buscar por Instalação e Lote</button>
+            <button type="submit" asp-action="DeletarEquipamento" style="background-color: #f44336;">Deletar</button>
+        </div>
+    </form>
+</body>
+</html>
