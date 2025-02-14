@@ -11,10 +11,9 @@ namespace Lynx.UX.Models
         [MaxLength(15, ErrorMessage = "O Fabricante deve ter no máximo 15 caracteres.")]
         public string Fabricante { get; set; }
         [Required(ErrorMessage = "O campo Operadora é obrigatório.")]
-        [MaxLength(5, ErrorMessage = "A Operadora deve ter no máximo 5 caracteres.")]
-        public string Operadora { get; set; }
+        public OperadoraEnum Operadora { get; set; }
         [Required(ErrorMessage = "O campo Lote é obrigatório.")]
-        [Range(1, int.MaxValue, ErrorMessage = "O Lote deve ser maior que 0.")]
+        [Range(1, 10, ErrorMessage = "O Lote deve estar entre 1 e 10.")]
         public int Lote { get; set; }
         [Required(ErrorMessage = "O campo Modelo é obrigatório.")]
         [Range(1, int.MaxValue, ErrorMessage = "O Modelo deve ser maior que 0.")]

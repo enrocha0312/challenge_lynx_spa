@@ -72,7 +72,12 @@
         <input type="text" name="Fabricante" id="fab" maxlength="15" required><br>
 
         <label for="opr"><b>Operadora</b></label>
-        <input type="text" name="Operadora" id="opr" maxlength="5" required><br>
+        <select name="Operadora" id="opr" required>
+            <option value="">Selecione uma operadora</option>
+            <option value="Claro">Claro</option>
+            <option value="Tim">Tim</option>
+            <option value="Vivo">Vivo</option>
+        </select><br>
 
         <label for="lote"><b>Lote</b></label>
         <input type="number" name="Lote" id="lote" min="1" required><br>

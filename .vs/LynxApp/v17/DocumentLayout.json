@@ -7,6 +7,14 @@
       "RelativeMoniker": "D:0:0:{526E5657-7DEB-42DB-A93F-C4F97AE953FE}|Lynx.UX\\Lynx.UX.csproj|solutionrelative:lynx.ux\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{526E5657-7DEB-42DB-A93F-C4F97AE953FE}|Lynx.UX\\Lynx.UX.csproj|d:\\codigos_vscode\\programas_didaticos_c#\\desenvolvimento_web\\lynxapp\\lynx.ux\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{526E5657-7DEB-42DB-A93F-C4F97AE953FE}|Lynx.UX\\Lynx.UX.csproj|solutionrelative:lynx.ux\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{526E5657-7DEB-42DB-A93F-C4F97AE953FE}|Lynx.UX\\Lynx.UX.csproj|d:\\codigos_vscode\\programas_didaticos_c#\\desenvolvimento_web\\lynxapp\\lynx.ux\\models\\operadoraenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{526E5657-7DEB-42DB-A93F-C4F97AE953FE}|Lynx.UX\\Lynx.UX.csproj|solutionrelative:lynx.ux\\models\\operadoraenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{526E5657-7DEB-42DB-A93F-C4F97AE953FE}|Lynx.UX\\Lynx.UX.csproj|d:\\codigos_vscode\\programas_didaticos_c#\\desenvolvimento_web\\lynxapp\\lynx.ux\\models\\equipamentoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{526E5657-7DEB-42DB-A93F-C4F97AE953FE}|Lynx.UX\\Lynx.UX.csproj|solutionrelative:lynx.ux\\models\\equipamentoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -18,20 +26,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "EquipamentoViewModel.cs",
               "DocumentMoniker": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\Lynx.UX\\Models\\EquipamentoViewModel.cs",
               "RelativeDocumentMoniker": "Lynx.UX\\Models\\EquipamentoViewModel.cs",
               "ToolTip": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\Lynx.UX\\Models\\EquipamentoViewModel.cs",
               "RelativeToolTip": "Lynx.UX\\Models\\EquipamentoViewModel.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAABRAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T23:07:15.501Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T03:11:06.39Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OperadoraEnum.cs",
+              "DocumentMoniker": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\Lynx.UX\\Models\\OperadoraEnum.cs",
+              "RelativeDocumentMoniker": "Lynx.UX\\Models\\OperadoraEnum.cs",
+              "ToolTip": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\Lynx.UX\\Models\\OperadoraEnum.cs",
+              "RelativeToolTip": "Lynx.UX\\Models\\OperadoraEnum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T03:11:00.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\Lynx.UX\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Lynx.UX\\Models\\ErrorViewModel.cs",
+              "ToolTip": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\Lynx.UX\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Lynx.UX\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T03:10:57.389Z"
             },
             {
               "$type": "Document",
@@ -41,7 +76,7 @@
               "RelativeDocumentMoniker": "Lynx.UX\\Views\\Home\\Index.cshtml",
               "ToolTip": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\Lynx.UX\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Lynx.UX\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAE0AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-12T21:33:43.075Z",
               "EditorCaption": ""
