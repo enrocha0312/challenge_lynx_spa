@@ -1,0 +1,34 @@
+# Ignorar diretório do Visual Studio
+.vs/
+*.user
+*.suo
+*.vsp
+*.vspx
+*.ncb
+*.opendb
+*.obj
+*.pdb
+*.log
+*.tlog
+*.cache
+*.ilk
+
+# Ignorar pacotes do NuGet
+*.nupkg
+project.lock.json
+packages/
+bin/
+obj/
+
+# Ignorar arquivos de build e debug
+*.exe
+*.dll
+*.db
+*.bak
+*.log
+*.tmp
+
+# Ignorar configurações específicas do usuário
+*.rsuser
+*.sln.iml
+*.sln.docstates

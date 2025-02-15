@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxAPI\\LynxAPI.csproj": {}
+    "d:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxAPI\\LynxAPI.csproj": {}
   },
   "projects": {
-    "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxAPI\\LynxAPI.csproj": {
+    "d:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxAPI\\LynxAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxAPI\\LynxAPI.csproj",
+        "projectUniqueName": "d:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxAPI\\LynxAPI.csproj",
         "projectName": "LynxAPI",
-        "projectPath": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxAPI\\LynxAPI.csproj",
+        "projectPath": "d:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxAPI\\LynxAPI.csproj",
         "packagesPath": "C:\\Users\\nepor\\.nuget\\packages\\",
-        "outputPath": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxAPI\\obj\\",
+        "outputPath": "d:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -54,6 +54,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",

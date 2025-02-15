@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LynxUX")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a34e494a592ce34de6f20f58444e73a2c98be43")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b2f7e9d16455707e6f970167d76e58f31c2bfca")]
 [assembly: System.Reflection.AssemblyProductAttribute("LynxUX")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LynxUX")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
