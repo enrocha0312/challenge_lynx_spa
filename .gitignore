@@ -32,3 +32,5 @@ obj/
 *.rsuser
 *.sln.iml
 *.sln.docstates
+
+.gitignore
