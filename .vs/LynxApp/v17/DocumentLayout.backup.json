@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7296F77C-C036-4D28-AA7F-71C61F4EB997}|LynxAPI\\LynxAPI.csproj|d:\\codigos_vscode\\programas_didaticos_c#\\desenvolvimento_web\\lynxapp\\lynxapi\\controllers\\equipamentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7296F77C-C036-4D28-AA7F-71C61F4EB997}|LynxAPI\\LynxAPI.csproj|solutionrelative:lynxapi\\controllers\\equipamentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7296F77C-C036-4D28-AA7F-71C61F4EB997}|LynxAPI\\LynxAPI.csproj|d:\\codigos_vscode\\programas_didaticos_c#\\desenvolvimento_web\\lynxapp\\lynxapi\\migrations\\20250217091914_populartabelaequipamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7296F77C-C036-4D28-AA7F-71C61F4EB997}|LynxAPI\\LynxAPI.csproj|solutionrelative:lynxapi\\migrations\\20250217091914_populartabelaequipamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -51,6 +55,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "EquipamentoController.cs",
+              "DocumentMoniker": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxAPI\\Controllers\\EquipamentoController.cs",
+              "RelativeDocumentMoniker": "LynxAPI\\Controllers\\EquipamentoController.cs",
+              "ToolTip": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxAPI\\Controllers\\EquipamentoController.cs",
+              "RelativeToolTip": "LynxAPI\\Controllers\\EquipamentoController.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAmwEwAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T09:36:17.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "20250217091914_PopularTabelaEquipamento.cs",
               "DocumentMoniker": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxAPI\\Migrations\\20250217091914_PopularTabelaEquipamento.cs",
               "RelativeDocumentMoniker": "LynxAPI\\Migrations\\20250217091914_PopularTabelaEquipamento.cs",
@@ -63,7 +80,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxAPI\\Program.cs",
               "RelativeDocumentMoniker": "LynxAPI\\Program.cs",
@@ -76,7 +93,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxAPI\\Context\\AppDbContext.cs",
               "RelativeDocumentMoniker": "LynxAPI\\Context\\AppDbContext.cs",
@@ -89,20 +106,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "LynxAPI.csproj",
               "DocumentMoniker": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxAPI\\LynxAPI.csproj",
               "RelativeDocumentMoniker": "LynxAPI\\LynxAPI.csproj",
               "ToolTip": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxAPI\\LynxAPI.csproj",
               "RelativeToolTip": "LynxAPI\\LynxAPI.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-02-14T19:29:46.413Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Equipamento.cs",
               "DocumentMoniker": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxAPI\\Models\\Equipamento.cs",
               "RelativeDocumentMoniker": "LynxAPI\\Models\\Equipamento.cs",
@@ -115,7 +132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "EquipamentoViewModel.cs",
               "DocumentMoniker": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxUX\\Models\\EquipamentoViewModel.cs",
               "RelativeDocumentMoniker": "LynxUX\\Models\\EquipamentoViewModel.cs",
@@ -128,7 +145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "OperadoraEnum.cs",
               "DocumentMoniker": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxUX\\Models\\OperadoraEnum.cs",
               "RelativeDocumentMoniker": "LynxUX\\Models\\OperadoraEnum.cs",
@@ -141,7 +158,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Codigos_VSCODE\\Programas_didaticos_C#\\desenvolvimento_web\\LynxApp\\LynxUX\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "LynxUX\\Views\\Home\\Index.cshtml",
