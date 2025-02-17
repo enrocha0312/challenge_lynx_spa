@@ -93,12 +93,13 @@ public class HomeController : Controller
         try
         {
             var json = JsonSerializer.Serialize(equipamento);
-            var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             HttpResponseMessage response = await _httpClient.PutAsync($"Equipamento/{equipamento.Instalacao}/{equipamento.Lote}", content);
 
             if (response.IsSuccessStatusCode)
             {
+                RegistraArquivoLog("Atualizações", $"Equipamento alterado: {JsonSerializer.Serialize(equipamento)}");
                 ViewBag.Mensagem = "Equipamento alterado com sucesso!";
             }
             else
@@ -106,9 +107,9 @@ public class HomeController : Controller
                 ViewBag.Erro = "Erro ao alterar equipamento.";
             }
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
-            ViewBag.Erro = $"Erro na comunicação com a API: {ex.Message}";
+            ViewBag.Erro = $"Erro na comunicação com a API: {e.Message}";
         }
 
         return View("Index");
@@ -122,6 +123,7 @@ public class HomeController : Controller
 
             if (response.IsSuccessStatusCode)
             {
+                RegistraArquivoLog("Delecoes", $"Equipamento deletado: Instalação={instalacao}, Lote={lote}");
                 ViewBag.Mensagem = "Equipamento deletado com sucesso!";
             }
             else
@@ -129,9 +131,9 @@ public class HomeController : Controller
                 ViewBag.Erro = "Erro ao deletar equipamento.";
             }
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
-            ViewBag.Erro = $"Erro na comunicação com a API: {ex.Message}";
+            ViewBag.Erro = $"Erro na comunicação com a API: {e.Message}";
         }
 
         return View("Index");
@@ -158,6 +160,7 @@ public class HomeController : Controller
 
             if (response.IsSuccessStatusCode)
             {
+                RegistraArquivoLog("Primeiros cadastros", $"Equipamento cadastrado: {JsonSerializer.Serialize(equipamento)}");
                 ViewBag.Mensagem = "Equipamento cadastrado com sucesso!";
             }
             else
@@ -165,11 +168,35 @@ public class HomeController : Controller
                 ViewBag.Erro = "Erro ao cadastrar equipamento.";
             }
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
-            ViewBag.Erro = $"Erro na comunicação com a API: {ex.Message}";
+            ViewBag.Erro = $"Erro na comunicação com a API: {e.Message}";
         }
 
         return View("Index");
+    }
+
+    private void RegistraArquivoLog(string tipo, string mensagem)
+    {
+        try
+        {
+            string logsPath = Path.Combine(Directory.GetCurrentDirectory(), "Logs");
+            if (!Directory.Exists(logsPath))
+            {
+                Directory.CreateDirectory(logsPath);
+            }
+
+            string filePath = Path.Combine(logsPath, $"{tipo}.txt");
+            string logEntry = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} - {mensagem}";
+
+            using (StreamWriter sw = new StreamWriter(filePath, true))
+            {
+                sw.WriteLine(logEntry);
+            }
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"Erro ao escrever no log: {e.Message}");
+        }
     }
 }
