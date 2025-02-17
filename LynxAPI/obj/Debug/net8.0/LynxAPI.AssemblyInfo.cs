@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LynxAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c17e7f55ac32b83b9d36cca1b5df6d420faee1e0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a04bdda5c616c89b3865ee61331b0a0d5dd6fce")]
 [assembly: System.Reflection.AssemblyProductAttribute("LynxAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LynxAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

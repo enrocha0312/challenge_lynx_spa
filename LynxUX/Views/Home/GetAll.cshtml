@@ -1,0 +1,40 @@
+﻿@model List<LynxUX.Models.EquipamentoViewModel>
+
+@{
+    ViewData["Title"] = "Lista de Equipamentos";
+}
+
+<h2>Lista de Equipamentos</h2>
+
+@if (ViewBag.Erro != null)
+{
+    <p style="color: red;">@ViewBag.Erro</p>
+}
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Instalação</th>
+            <th>Lote</th>
+            <th>Fabricante</th>
+            <th>Operadora</th>
+            <th>Modelo</th>
+            <th>Versão</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Instalacao</td>
+                <td>@item.Lote</td>
+                <td>@item.Fabricante</td>
+                <td>@item.Operadora</td>
+                <td>@item.Modelo</td>
+                <td>@item.Versao</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Index", "Home")">Voltar</a>

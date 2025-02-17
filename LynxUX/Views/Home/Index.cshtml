@@ -23,7 +23,7 @@
             font-weight: bold;
         }
 
-        input {
+        input, select {
             padding: 5px;
             margin-top: 5px;
             border: 1px solid #ccc;
@@ -35,36 +35,36 @@
             padding: 10px;
         }
 
-        button {
-            margin-top: 10px;
-            padding: 8px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
         .btn-container {
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-top: 10px;
         }
 
             .btn-container button {
                 width: 200px;
                 margin-bottom: 5px;
+                padding: 8px;
+                border: none;
+                border-radius: 5px;
                 background-color: #4CAF50;
                 color: white;
+                cursor: pointer;
             }
 
                 .btn-container button:hover {
                     opacity: 0.8;
                 }
+        .btn-delete {
+            background-color: #f44336 !important;
+        }
     </style>
 </head>
 <body>
     <h2 style="background-color:powderblue;">Cadastro de Equipamentos</h2>
 
-    <form asp-action="SalvarEquipamento" method="post">
+    <form asp-action="CadastrarEquipamento" method="post">
         <label for="inst"><b>Instalação</b></label>
         <input type="text" name="Instalacao" id="inst" maxlength="10" required><br>
 
@@ -90,10 +90,22 @@
 
         <div class="btn-container">
             <button type="submit">Cadastrar</button>
-            <button type="submit" asp-action="AlterarEquipamento">Alterar</button>
-            <button type="submit" asp-action="MostrarTodos">Mostrar Todos</button>
-            <button type="submit" asp-action="BuscarEquipamento">Buscar por Instalação e Lote</button>
-            <button type="submit" asp-action="DeletarEquipamento" style="background-color: #f44336;">Deletar</button>
+
+            <button type="submit" formaction="@Url.Action("AlterarEquipamento", "Home")">
+                Alterar
+            </button>
+
+            <button type="submit" formaction="@Url.Action("GetAll", "Home")">
+                Mostrar Todos
+            </button>
+
+            <button type="submit" formaction="@Url.Action("GetByInstalacaoELote", "Home")">
+                Buscar por Instalação e Lote
+            </button>
+
+            <button type="submit" class="btn-delete" formaction="@Url.Action("DeletarEquipamento", "Home")">
+                Deletar
+            </button>
         </div>
     </form>
 </body>

@@ -1,0 +1,29 @@
+﻿@model LynxUX.Models.EquipamentoViewModel
+
+@{
+    ViewData["Title"] = "Detalhes do Equipamento";
+}
+
+<h2>Detalhes do Equipamento</h2>
+
+@if (ViewBag.Erro != null)
+{
+    <p style="color: red;">@ViewBag.Erro</p>
+}
+else if (Model != null)
+{
+    <table border="1">
+        <tr><th>Instalação</th><td>@Model.Instalacao</td></tr>
+        <tr><th>Lote</th><td>@Model.Lote</td></tr>
+        <tr><th>Fabricante</th><td>@Model.Fabricante</td></tr>
+        <tr><th>Operadora</th><td>@Model.Operadora</td></tr>
+        <tr><th>Modelo</th><td>@Model.Modelo</td></tr>
+        <tr><th>Versão</th><td>@Model.Versao</td></tr>
+    </table>
+}
+else
+{
+    <p>Nenhum equipamento encontrado.</p>
+}
+
+<a href="@Url.Action("Index", "Home")">Voltar</a>
