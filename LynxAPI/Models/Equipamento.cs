@@ -10,6 +10,7 @@ public class Equipamento
         public string Instalacao { get; set; } = string.Empty;
 
         [Required]
+        [Range(1, 10)]
         public int Lote { get; set; }
 
         [Required]
@@ -21,9 +22,11 @@ public class Equipamento
         public OperadoraEnum Operadora { get; set; }
 
         [Required]
+        [Range(1, int.MaxValue)]
         public int Modelo { get; set; }
 
         [Required]
+        [Range(1, int.MaxValue)]
         public int Versao { get; set; }
 }
 public enum OperadoraEnum
