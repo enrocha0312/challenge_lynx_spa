@@ -56,8 +56,15 @@
                 .btn-container button:hover {
                     opacity: 0.8;
                 }
+
         .btn-delete {
             background-color: #f44336 !important;
+        }
+
+        .btn-upload {
+            background-color: #FFD700 !important;
+            color: black;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -90,23 +97,17 @@
 
         <div class="btn-container">
             <button type="submit">Cadastrar</button>
-
-            <button type="submit" formaction="@Url.Action("AlterarEquipamento", "Home")">
-                Alterar
-            </button>
-
-            <button type="submit" formaction="@Url.Action("GetAll", "Home")">
-                Mostrar Todos
-            </button>
-
-            <button type="submit" formaction="@Url.Action("GetByInstalacaoELote", "Home")">
-                Buscar por Instalação e Lote
-            </button>
-
-            <button type="submit" class="btn-delete" formaction="@Url.Action("DeletarEquipamento", "Home")">
-                Deletar
-            </button>
+            <button type="submit" formaction="@Url.Action("AlterarEquipamento", "Home")">Alterar</button>
+            <button type="submit" formaction="@Url.Action("GetAll", "Home")">Mostrar Todos</button>
+            <button type="submit" formaction="@Url.Action("GetByInstalacaoELote", "Home")">Buscar por Instalação e Lote</button>
+            <button type="submit" class="btn-delete" formaction="@Url.Action("DeletarEquipamento", "Home")">Deletar</button>
         </div>
     </form>
+
+    <form asp-action="UploadCSV" method="post" enctype="multipart/form-data" class="btn-container">
+        <input type="file" name="arquivoCSV" required>
+        <button type="submit" class="btn-upload">Enviar CSV</button>
+    </form>
+
 </body>
 </html>
