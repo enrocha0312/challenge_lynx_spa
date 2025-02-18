@@ -66,7 +66,6 @@ namespace LynxAPI.Controllers
                 return NotFound("Equipamento não encontrado.");
             }
 
-            // Atualizando os dados
             equipamentoExistente.Fabricante = equipamentoAtualizado.Fabricante;
             equipamentoExistente.Operadora = equipamentoAtualizado.Operadora;
             equipamentoExistente.Modelo = equipamentoAtualizado.Modelo;
@@ -91,6 +90,64 @@ namespace LynxAPI.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent(); 
+        }
+        [HttpPost("upload-csv")]
+        public async Task<IActionResult> UploadCsv(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+            {
+                return BadRequest("Nenhum arquivo enviado.");
+            }
+
+            var equipamentos = new List<Equipamento>();
+
+            using (var stream = new StreamReader(file.OpenReadStream()))
+            {
+                string? linha;
+                bool primeiraLinha = true;
+
+                while ((linha = stream.ReadLine()) != null)
+                {
+                    if (primeiraLinha)
+                    {
+                        primeiraLinha = false;
+                        continue;
+                    }
+
+                    var colunas = linha.Split(';');
+
+                    if (colunas.Length != 6)
+                    {
+                        return BadRequest($"Erro ao processar a linha: {linha}. Formato inválido.");
+                    }
+
+                    var equipamento = new Equipamento
+                    {
+                        Instalacao = colunas[0].Trim(),
+                        Lote = int.Parse(colunas[1]),
+                        Operadora = Enum.Parse<OperadoraEnum>(colunas[2].Trim(), true),
+                        Fabricante = colunas[3].Trim(),
+                        Modelo = int.Parse(colunas[4]),
+                        Versao = int.Parse(colunas[5])
+                    };
+
+                    equipamentos.Add(equipamento);
+                }
+            }
+
+            var registrosExistentes = _context.Equipamentos
+                .Where(e => equipamentos.Any(novo => novo.Instalacao == e.Instalacao && novo.Lote == e.Lote))
+                .ToList();
+
+            if (registrosExistentes.Any())
+            {
+                return Conflict("Alguns registros já existem no banco.");
+            }
+
+            _context.Equipamentos.AddRange(equipamentos);
+            await _context.SaveChangesAsync();
+
+            return Ok($"{equipamentos.Count} equipamentos cadastrados com sucesso.");
         }
     }
 }

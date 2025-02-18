@@ -236,4 +236,79 @@ public class HomeController : Controller
             _logger.LogError($"Erro ao escrever no histórico do usuário: {e.Message}");
         }
     }
+
+    [HttpPost]
+    public async Task<IActionResult> ImportarCsv(IFormFile arquivoCsv)
+    {
+        if (arquivoCsv == null || arquivoCsv.Length == 0)
+        {
+            ViewBag.Erro = "Nenhum arquivo foi enviado.";
+            return View("Index");
+        }
+
+        List<EquipamentoViewModel> equipamentos = new List<EquipamentoViewModel>();
+
+        try
+        {
+            using (var reader = new StreamReader(arquivoCsv.OpenReadStream()))
+            {
+                string? linha;
+                bool primeiraLinha = true;
+
+                while ((linha = reader.ReadLine()) != null)
+                {
+                    if (primeiraLinha)
+                    {
+                        primeiraLinha = false; 
+                        continue;
+                    }
+
+                    string[] colunas = linha.Split(';');
+                    if (colunas.Length != 6)
+                    {
+                        ViewBag.Erro = "Formato do CSV inválido.";
+                        return View("Index");
+                    }
+
+                    var equipamento = new EquipamentoViewModel
+                    {
+                        Instalacao = colunas[0].Trim(),
+                        Lote = int.Parse(colunas[1].Trim()),
+                        Operadora = Enum.Parse<OperadoraEnum>(colunas[2].Trim(), true),
+                        Fabricante = colunas[3].Trim(),
+                        Modelo = int.Parse(colunas[4].Trim()),
+                        Versao = int.Parse(colunas[5].Trim())
+                    };
+
+                    equipamentos.Add(equipamento);
+                }
+            }
+
+            var jsonContent = new StringContent(
+                JsonSerializer.Serialize(equipamentos),
+                Encoding.UTF8,
+                "application/json"
+            );
+
+            HttpResponseMessage response = await _httpClient.PostAsync("Equipamento/importar", jsonContent);
+
+            if (response.IsSuccessStatusCode)
+            {
+                RegistraArquivoLog("Importacoes", $"Importação concluída. {equipamentos.Count} registros adicionados.");
+                GerarHistoricoUsuario("IMPORTACAO", $"Usuário importou {equipamentos.Count} registros via CSV.");
+                ViewBag.Mensagem = "Importação realizada com sucesso!";
+            }
+            else
+            {
+                ViewBag.Erro = "Erro ao importar os equipamentos.";
+            }
+        }
+        catch (Exception ex)
+        {
+            ViewBag.Erro = $"Erro no processamento do CSV: {ex.Message}";
+        }
+
+        return View("Index");
+    }
+
 }
