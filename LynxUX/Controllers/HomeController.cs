@@ -45,7 +45,9 @@ public class HomeController : Controller
                 var equipamentos = JsonSerializer.Deserialize<List<EquipamentoViewModel>>(json,
                     new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-                return View("GetAll", equipamentos); 
+                GerarHistoricoUsuario("Consulta", "Usuário buscou todos os equipamentos.");
+
+                return View("GetAll", equipamentos);
             }
             else
             {
@@ -60,6 +62,7 @@ public class HomeController : Controller
         }
     }
 
+
     public async Task<IActionResult> GetByInstalacaoELote(string instalacao, int lote)
     {
         try
@@ -71,6 +74,8 @@ public class HomeController : Controller
                 var json = await response.Content.ReadAsStringAsync();
                 var equipamento = JsonSerializer.Deserialize<EquipamentoViewModel>(json,
                     new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+                GerarHistoricoUsuario("Consulta", $"Usuário buscou equipamento com Instalação={instalacao}, Lote={lote}.");
 
                 return View("ExibirEquipamento", equipamento);
             }
@@ -100,6 +105,8 @@ public class HomeController : Controller
             if (response.IsSuccessStatusCode)
             {
                 RegistraArquivoLog("Atualizações", $"Equipamento alterado: {JsonSerializer.Serialize(equipamento)}");
+                GerarHistoricoUsuario("Alteração", $"Usuário alterou equipamento com Instalação={equipamento.Instalacao}, Lote={equipamento.Lote}.");
+
                 ViewBag.Mensagem = "Equipamento alterado com sucesso!";
             }
             else
@@ -124,6 +131,8 @@ public class HomeController : Controller
             if (response.IsSuccessStatusCode)
             {
                 RegistraArquivoLog("Delecoes", $"Equipamento deletado: Instalação={instalacao}, Lote={lote}");
+                GerarHistoricoUsuario("Exclusão", $"Usuário deletou equipamento com Instalação={instalacao}, Lote={lote}.");
+
                 ViewBag.Mensagem = "Equipamento deletado com sucesso!";
             }
             else
@@ -138,6 +147,7 @@ public class HomeController : Controller
 
         return View("Index");
     }
+
 
     [HttpPost]
     public async Task<IActionResult> CadastrarEquipamento(EquipamentoViewModel equipamento)
@@ -161,6 +171,8 @@ public class HomeController : Controller
             if (response.IsSuccessStatusCode)
             {
                 RegistraArquivoLog("Primeiros cadastros", $"Equipamento cadastrado: {JsonSerializer.Serialize(equipamento)}");
+                GerarHistoricoUsuario("Cadastro", $"Usuário cadastrou equipamento: {JsonSerializer.Serialize(equipamento)}.");
+
                 ViewBag.Mensagem = "Equipamento cadastrado com sucesso!";
             }
             else
@@ -175,6 +187,7 @@ public class HomeController : Controller
 
         return View("Index");
     }
+
 
     private void RegistraArquivoLog(string tipo, string mensagem)
     {
@@ -197,6 +210,30 @@ public class HomeController : Controller
         catch (Exception e)
         {
             _logger.LogError($"Erro ao escrever no log: {e.Message}");
+        }
+    }
+    private void GerarHistoricoUsuario(string acao, string mensagem)
+    {
+        try
+        {
+            string historicoPath = Path.Combine(Directory.GetCurrentDirectory(), "Historico");
+            if (!Directory.Exists(historicoPath))
+            {
+                Directory.CreateDirectory(historicoPath);
+            }
+
+            string fileName = $"LynxApp_log_{DateTime.Now:yyyyMMdd}.txt";
+            string filePath = Path.Combine(historicoPath, fileName);
+            string logEntry = $"{DateTime.Now:dd/MM/yyyy HH:mm:ss} - [{acao}] - {mensagem}";
+
+            using (StreamWriter sw = new StreamWriter(filePath, true))
+            {
+                sw.WriteLine(logEntry);
+            }
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"Erro ao escrever no histórico do usuário: {e.Message}");
         }
     }
 }
