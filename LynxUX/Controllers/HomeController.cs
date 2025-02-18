@@ -290,7 +290,7 @@ public class HomeController : Controller
                 "application/json"
             );
 
-            HttpResponseMessage response = await _httpClient.PostAsync("Equipamento/importar", jsonContent);
+            HttpResponseMessage response = await _httpClient.PostAsync("Equipamento/upload-csv", jsonContent); 
 
             if (response.IsSuccessStatusCode)
             {
