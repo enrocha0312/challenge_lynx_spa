@@ -1,29 +1,86 @@
 ﻿@model LynxUX.Models.EquipamentoViewModel
 
 @{
-    ViewData["Title"] = "Detalhes do Equipamento";
+    ViewData["Title"] = "Dados do Equipamento";
 }
 
-<h2>Detalhes do Equipamento</h2>
+<h2 class="titulo">Detalhes do Equipamento</h2>
 
 @if (ViewBag.Erro != null)
 {
-    <p style="color: red;">@ViewBag.Erro</p>
+    <p class="mensagem-erro">@ViewBag.Erro</p>
 }
 else if (Model != null)
 {
-    <table border="1">
-        <tr><th>Instalação</th><td>@Model.Instalacao</td></tr>
-        <tr><th>Lote</th><td>@Model.Lote</td></tr>
-        <tr><th>Fabricante</th><td>@Model.Fabricante</td></tr>
-        <tr><th>Operadora</th><td>@Model.Operadora</td></tr>
-        <tr><th>Modelo</th><td>@Model.Modelo</td></tr>
-        <tr><th>Versão</th><td>@Model.Versao</td></tr>
+    <table class="tabela-equipamentos">
+        <tbody>
+            <tr><th>Instalação</th><td>@Model.Instalacao</td></tr>
+            <tr><th>Lote</th><td>@Model.Lote</td></tr>
+            <tr><th>Fabricante</th><td>@Model.Fabricante</td></tr>
+            <tr><th>Operadora</th><td>@Model.Operadora</td></tr>
+            <tr><th>Modelo</th><td>@Model.Modelo</td></tr>
+            <tr><th>Versão</th><td>@Model.Versao</td></tr>
+        </tbody>
     </table>
 }
 else
 {
-    <p>Nenhum equipamento encontrado.</p>
+    <p class="mensagem-info">Nenhum equipamento encontrado.</p>
 }
 
-<a href="@Url.Action("Index", "Home")">Voltar</a>
+<a href="@Url.Action("Index", "Home")" class="botao-voltar">Voltar</a>
+
+<style>
+    .titulo {
+        text-align: center;
+        background-color: #f0f8ff;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .mensagem-erro {
+        color: red;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .mensagem-info {
+        text-align: center;
+        font-style: italic;
+    }
+
+    .tabela-equipamentos {
+        width: 50%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        border: 1px solid #ddd;
+        background-color: #fff;
+    }
+
+        .tabela-equipamentos th, .tabela-equipamentos td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .tabela-equipamentos th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+    .botao-voltar {
+        display: block;
+        width: 150px;
+        text-align: center;
+        margin: 20px auto;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+        .botao-voltar:hover {
+            background-color: #45a049;
+        }
+</style>
