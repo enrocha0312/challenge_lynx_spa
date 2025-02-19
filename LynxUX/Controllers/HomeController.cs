@@ -246,61 +246,26 @@ public class HomeController : Controller
             return View("Index");
         }
 
-        List<EquipamentoViewModel> equipamentos = new List<EquipamentoViewModel>();
-
         try
         {
-            using (var reader = new StreamReader(arquivoCsv.OpenReadStream()))
+            using (var content = new MultipartFormDataContent())
             {
-                string? linha;
-                bool primeiraLinha = true;
+                var fileStream = arquivoCsv.OpenReadStream();
+                var fileContent = new StreamContent(fileStream);
+                content.Add(fileContent, "file", arquivoCsv.FileName);
 
-                while ((linha = reader.ReadLine()) != null)
+                HttpResponseMessage response = await _httpClient.PostAsync("Equipamento/upload-csv", content);
+
+                if (response.IsSuccessStatusCode)
                 {
-                    if (primeiraLinha)
-                    {
-                        primeiraLinha = false; 
-                        continue;
-                    }
-
-                    string[] colunas = linha.Split(';');
-                    if (colunas.Length != 6)
-                    {
-                        ViewBag.Erro = "Formato do CSV inválido.";
-                        return View("Index");
-                    }
-
-                    var equipamento = new EquipamentoViewModel
-                    {
-                        Instalacao = colunas[0].Trim(),
-                        Lote = int.Parse(colunas[1].Trim()),
-                        Operadora = Enum.Parse<OperadoraEnum>(colunas[2].Trim(), true),
-                        Fabricante = colunas[3].Trim(),
-                        Modelo = int.Parse(colunas[4].Trim()),
-                        Versao = int.Parse(colunas[5].Trim())
-                    };
-
-                    equipamentos.Add(equipamento);
+                    RegistraArquivoLog("Importacoes", $"Importação concluída com sucesso.");
+                    GerarHistoricoUsuario("IMPORTACAO", $"Usuário importou registros via CSV.");
+                    ViewBag.Mensagem = "Importação realizada com sucesso!";
                 }
-            }
-
-            var jsonContent = new StringContent(
-                JsonSerializer.Serialize(equipamentos),
-                Encoding.UTF8,
-                "application/json"
-            );
-
-            HttpResponseMessage response = await _httpClient.PostAsync("Equipamento/upload-csv", jsonContent); 
-
-            if (response.IsSuccessStatusCode)
-            {
-                RegistraArquivoLog("Importacoes", $"Importação concluída. {equipamentos.Count} registros adicionados.");
-                GerarHistoricoUsuario("IMPORTACAO", $"Usuário importou {equipamentos.Count} registros via CSV.");
-                ViewBag.Mensagem = "Importação realizada com sucesso!";
-            }
-            else
-            {
-                ViewBag.Erro = "Erro ao importar os equipamentos.";
+                else
+                {
+                    ViewBag.Erro = "Erro ao importar os equipamentos.";
+                }
             }
         }
         catch (Exception ex)
@@ -310,5 +275,6 @@ public class HomeController : Controller
 
         return View("Index");
     }
+
 
 }
