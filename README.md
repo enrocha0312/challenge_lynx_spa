@@ -17,3 +17,5 @@ Outra informação importante sobre o back-end é a migração. Utilizei o migra
 ## Front-end
 
 Para front-end, utilizei a arquitetura ASPNET MVC. Essa arquitetura utiliza 3 camadas: Modelo, View e Controle. O Modelo é a entidade que é persistida no banco. View representa a página visualizada de fato. O Controle, no caso a classe HomeController, é responsável por fazer contato com a API do back-end, para que faça as operações necessárias nos seus respectivos endpoints. Para atender aos requisitos de histórico e logs, foram criados dois métodos privados, que são chamados nas operações de CRUD que os exigem. Esses métodos se encontram na própria classe HomeController. Duas Views além da página principal foram criadas. Elas foram necessárias para visualização dos métodos de verbo GET. 
+
+![alt text](image-3.png)
