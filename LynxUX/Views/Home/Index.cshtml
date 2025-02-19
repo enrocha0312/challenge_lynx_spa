@@ -62,7 +62,7 @@
         }
 
         .btn-upload {
-            background-color: #FFD700 !important; 
+            background-color: #FFD700 !important;
             color: black;
             font-weight: bold;
         }
@@ -71,15 +71,15 @@
 <body>
     <h2 style="background-color:powderblue;">Cadastro de Equipamentos</h2>
 
-    <form asp-action="CadastrarEquipamento" method="post">
+    <form id="equipamentoForm">
         <label for="inst"><b>Instalação</b></label>
-        <input type="text" name="Instalacao" id="inst" maxlength="10" required><br>
+        <input type="text" name="Instalacao" id="inst" maxlength="10"><br>
 
         <label for="fab"><b>Fabricante</b></label>
-        <input type="text" name="Fabricante" id="fab" maxlength="15" required><br>
+        <input type="text" name="Fabricante" id="fab" maxlength="15"><br>
 
         <label for="opr"><b>Operadora</b></label>
-        <select name="Operadora" id="opr" required>
+        <select name="Operadora" id="opr">
             <option value="">Selecione uma operadora</option>
             <option value="Claro">Claro</option>
             <option value="Tim">Tim</option>
@@ -87,27 +87,66 @@
         </select><br>
 
         <label for="lote"><b>Lote</b></label>
-        <input type="number" name="Lote" id="lote" min="1" required><br>
+        <input type="number" name="Lote" id="lote" min="1"><br>
 
         <label for="mod"><b>Modelo</b></label>
-        <input type="number" name="Modelo" id="mod" min="1" required><br>
+        <input type="number" name="Modelo" id="mod" min="1"><br>
 
         <label for="ver"><b>Versão</b></label>
-        <input type="number" name="Versao" id="ver" min="1" required><br>
+        <input type="number" name="Versao" id="ver" min="1"><br>
 
         <div class="btn-container">
-            <button type="submit">Cadastrar</button>
-            <button type="submit" formaction="@Url.Action("AlterarEquipamento", "Home")">Alterar</button>
-            <button type="submit" formaction="@Url.Action("GetAll", "Home")">Mostrar Todos</button>
-            <button type="submit" formaction="@Url.Action("GetByInstalacaoELote", "Home")">Buscar por Instalação e Lote</button>
-            <button type="submit" class="btn-delete" formaction="@Url.Action("DeletarEquipamento", "Home")">Deletar</button>
+            <button type="submit" formaction="@Url.Action("CadastrarEquipamento", "Home")" onclick="return validarCampos(true)">
+                Cadastrar
+            </button>
+
+            <button type="submit" formaction="@Url.Action("AlterarEquipamento", "Home")" onclick="return validarCampos(true)">
+                Alterar
+            </button>
+
+            <button type="submit" formaction="@Url.Action("GetAll", "Home")">
+                Mostrar Todos
+            </button>
+
+            <button type="submit" formaction="@Url.Action("GetByInstalacaoELote", "Home")" onclick="return validarCampos(false)">
+                Buscar por Instalação e Lote
+            </button>
+
+            <button type="submit" class="btn-delete" formaction="@Url.Action("DeletarEquipamento", "Home")" onclick="return validarCampos(false)">
+                Deletar
+            </button>
         </div>
     </form>
 
     <form asp-action="UploadCSV" method="post" enctype="multipart/form-data" class="btn-container">
-        <input type="file" name="arquivoCSV" required>
+        <input type="file" name="arquivoCSV">
         <button type="submit" class="btn-upload">Enviar CSV</button>
     </form>
+
+    <script>
+        function validarCampos(todosObrigatorios) {
+            var instalacao = document.getElementById("inst").value.trim();
+            var lote = document.getElementById("lote").value.trim();
+            var fabricante = document.getElementById("fab").value.trim();
+            var operadora = document.getElementById("opr").value.trim();
+            var modelo = document.getElementById("mod").value.trim();
+            var versao = document.getElementById("ver").value.trim();
+
+            if (todosObrigatorios) {
+                if (!instalacao || !lote || !fabricante || !operadora || !modelo || !versao) {
+                    alert("Todos os campos são obrigatórios!");
+                    return false;
+                }
+            } else {
+                if (!instalacao || !lote) {
+                    alert("Instalação e Lote são obrigatórios!");
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    </script>
 
 </body>
 </html>
