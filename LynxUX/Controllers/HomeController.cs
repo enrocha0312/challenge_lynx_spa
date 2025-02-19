@@ -246,6 +246,8 @@ public class HomeController : Controller
             return View("Index");
         }
 
+        List<EquipamentoViewModel> equipamentos = new List<EquipamentoViewModel>();
+
         try
         {
             using (var content = new MultipartFormDataContent())
@@ -258,8 +260,21 @@ public class HomeController : Controller
 
                 if (response.IsSuccessStatusCode)
                 {
-                    RegistraArquivoLog("Importacoes", $"Importação concluída com sucesso.");
-                    GerarHistoricoUsuario("IMPORTACAO", $"Usuário importou registros via CSV.");
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    equipamentos = JsonSerializer.Deserialize<List<EquipamentoViewModel>>(jsonResponse,
+                        new JsonSerializerOptions { PropertyNameCaseInsensitive = true }) ?? new List<EquipamentoViewModel>();
+
+                    if (equipamentos.Any())
+                    {
+                        RegistraArquivoLog("Importacoes", $"Importação concluída. {equipamentos.Count} registros adicionados.\n" +
+                            $"{JsonSerializer.Serialize(equipamentos, new JsonSerializerOptions { WriteIndented = true })}");
+                    }
+                    else
+                    {
+                        RegistraArquivoLog("Importacoes", "Importação concluída, mas nenhum equipamento foi registrado.");
+                    }
+
+                    GerarHistoricoUsuario("IMPORTACAO", $"Usuário importou {equipamentos.Count} registros via CSV.");
                     ViewBag.Mensagem = "Importação realizada com sucesso!";
                 }
                 else

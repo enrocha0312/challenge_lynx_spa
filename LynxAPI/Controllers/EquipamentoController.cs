@@ -98,7 +98,6 @@ namespace LynxAPI.Controllers
             {
                 return BadRequest("Nenhum arquivo enviado.");
             }
-
             var equipamentos = new List<Equipamento>();
 
             using (var stream = new StreamReader(file.OpenReadStream()))
@@ -134,20 +133,20 @@ namespace LynxAPI.Controllers
                     equipamentos.Add(equipamento);
                 }
             }
-
-            var registrosExistentes = _context.Equipamentos
-                .Where(e => equipamentos.Any(novo => novo.Instalacao == e.Instalacao && novo.Lote == e.Lote))
-                .ToList();
-
-            if (registrosExistentes.Any())
+            foreach (var equipamento in equipamentos)
             {
-                return Conflict("Alguns registros já existem no banco.");
-            }
+                var existente = await _context.Equipamentos
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync(e => e.Instalacao == equipamento.Instalacao && e.Lote == equipamento.Lote);
 
+                if (existente != null)
+                {
+                    return Conflict($"O equipamento na instalação {equipamento.Instalacao} e lote {equipamento.Lote} já existe no banco.");
+                }
+            }
             _context.Equipamentos.AddRange(equipamentos);
             await _context.SaveChangesAsync();
-
-            return Ok($"{equipamentos.Count} equipamentos cadastrados com sucesso.");
+            return Ok(equipamentos);
         }
     }
 }

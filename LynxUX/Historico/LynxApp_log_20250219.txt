@@ -7,3 +7,4 @@
 19/02/2025 10:10:22 - [Cadastro] - Usuário cadastrou equipamento: {"Instalacao":"InstE","Fabricante":"FrontEnd2","Operadora":1,"Lote":5,"Modelo":5,"Versao":5}.
 19/02/2025 10:43:21 - [Exclusão] - Usuário deletou equipamento com Instalação=InstD, Lote=4.
 19/02/2025 10:49:28 - [Alteração] - Usuário alterou equipamento com Instalação=InstE, Lote=5.
+19/02/2025 20:29:44 - [IMPORTACAO] - Usuário importou 2 registros via CSV.

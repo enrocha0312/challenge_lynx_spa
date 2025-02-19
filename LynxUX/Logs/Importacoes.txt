@@ -1,0 +1,19 @@
+2025-02-19 20:29:44 - Importação concluída. 2 registros adicionados.
+[
+  {
+    "Instalacao": "Excel1",
+    "Fabricante": "Excel",
+    "Operadora": 0,
+    "Lote": 10,
+    "Modelo": 10,
+    "Versao": 10
+  },
+  {
+    "Instalacao": "Excel2",
+    "Fabricante": "Microsoft",
+    "Operadora": 1,
+    "Lote": 11,
+    "Modelo": 11,
+    "Versao": 11
+  }
+]
