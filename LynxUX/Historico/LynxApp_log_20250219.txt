@@ -3,3 +3,7 @@
 19/02/2025 05:09:44 - [Consulta] - Usuário buscou todos os equipamentos.
 19/02/2025 08:56:37 - [Consulta] - Usuário buscou todos os equipamentos.
 19/02/2025 09:19:12 - [Consulta] - Usuário buscou equipamento com Instalação=InstA, Lote=1.
+19/02/2025 09:57:21 - [Cadastro] - Usuário cadastrou equipamento: {"Instalacao":"InstD","Fabricante":"FrontEnd","Operadora":1,"Lote":4,"Modelo":4,"Versao":4}.
+19/02/2025 10:10:22 - [Cadastro] - Usuário cadastrou equipamento: {"Instalacao":"InstE","Fabricante":"FrontEnd2","Operadora":1,"Lote":5,"Modelo":5,"Versao":5}.
+19/02/2025 10:43:21 - [Exclusão] - Usuário deletou equipamento com Instalação=InstD, Lote=4.
+19/02/2025 10:49:28 - [Alteração] - Usuário alterou equipamento com Instalação=InstE, Lote=5.

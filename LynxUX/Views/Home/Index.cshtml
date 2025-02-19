@@ -70,7 +70,15 @@
 </head>
 <body>
     <h2 style="background-color:powderblue;">Cadastro de Equipamentos</h2>
+    @if (ViewBag.Mensagem != null)
+    {
+        <p style="color: green; font-weight: bold;">@ViewBag.Mensagem</p>
+    }
 
+    @if (ViewBag.Erro != null)
+    {
+        <p style="color: red; font-weight: bold;">@ViewBag.Erro</p>
+    }
     <form id="equipamentoForm">
         <label for="inst"><b>Instalação</b></label>
         <input type="text" name="Instalacao" id="inst" maxlength="10"><br>
@@ -96,11 +104,11 @@
         <input type="number" name="Versao" id="ver" min="1"><br>
 
         <div class="btn-container">
-            <button type="submit" formaction="@Url.Action("CadastrarEquipamento", "Home")" onclick="return validarCampos(true)">
+            <button type="submit" formaction="@Url.Action("CadastrarEquipamento", "Home")" formmethod="post" onclick="return validarCampos(true)">
                 Cadastrar
             </button>
 
-            <button type="submit" formaction="@Url.Action("AlterarEquipamento", "Home")" onclick="return validarCampos(true)">
+            <button type="submit" formaction="@Url.Action("AlterarEquipamento", "Home")" formmethod="post" onclick="return validarCampos(true)">
                 Alterar
             </button>
 
@@ -112,7 +120,7 @@
                 Buscar por Instalação e Lote
             </button>
 
-            <button type="submit" class="btn-delete" formaction="@Url.Action("DeletarEquipamento", "Home")" onclick="return validarCampos(false)">
+            <button type="submit" class="btn-delete" formaction="@Url.Action("DeletarEquipamento", "Home")" formmethod="post"  onclick="return validarCampos(false)">
                 Deletar
             </button>
         </div>
