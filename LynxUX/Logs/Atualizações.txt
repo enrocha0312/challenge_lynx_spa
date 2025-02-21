@@ -1,1 +1,2 @@
 2025-02-19 10:49:28 - Equipamento alterado: {"Instalacao":"InstE","Fabricante":"FrontAlterado","Operadora":0,"Lote":5,"Modelo":5,"Versao":5}
+2025-02-21 11:08:41 - Equipamento alterado: {"Instalacao":"InstB","Fabricante":"Outro","Operadora":1,"Lote":2,"Modelo":99,"Versao":120}

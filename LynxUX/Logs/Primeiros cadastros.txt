@@ -1,2 +1,3 @@
 2025-02-19 09:57:21 - Equipamento cadastrado: {"Instalacao":"InstD","Fabricante":"FrontEnd","Operadora":1,"Lote":4,"Modelo":4,"Versao":4}
 2025-02-19 10:10:22 - Equipamento cadastrado: {"Instalacao":"InstE","Fabricante":"FrontEnd2","Operadora":1,"Lote":5,"Modelo":5,"Versao":5}
+2025-02-21 11:03:54 - Equipamento cadastrado: {"Instalacao":"InstF","Fabricante":"Qualquer","Operadora":2,"Lote":7,"Modelo":7,"Versao":7}

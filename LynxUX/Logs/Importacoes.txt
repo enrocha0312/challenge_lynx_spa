@@ -17,3 +17,38 @@
     "Versao": 11
   }
 ]
+2025-02-21 11:07:02 - Importação concluída. 4 registros adicionados.
+[
+  {
+    "Instalacao": "Excel3",
+    "Fabricante": "Excel1",
+    "Operadora": 0,
+    "Lote": 15,
+    "Modelo": 15,
+    "Versao": 12
+  },
+  {
+    "Instalacao": "Excel4",
+    "Fabricante": "Microsoft1",
+    "Operadora": 1,
+    "Lote": 16,
+    "Modelo": 21,
+    "Versao": 22
+  },
+  {
+    "Instalacao": "Excel6",
+    "Fabricante": "Excel2",
+    "Operadora": 0,
+    "Lote": 71,
+    "Modelo": 23,
+    "Versao": 31
+  },
+  {
+    "Instalacao": "Excel5",
+    "Fabricante": "Microsoft3",
+    "Operadora": 1,
+    "Lote": 17,
+    "Modelo": 33,
+    "Versao": 33
+  }
+]

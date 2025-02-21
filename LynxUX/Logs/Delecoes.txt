@@ -1,1 +1,2 @@
 2025-02-19 10:43:21 - Equipamento deletado: Instalação=InstD, Lote=4
+2025-02-21 11:08:02 - Equipamento deletado: Instalação=InstA, Lote=1

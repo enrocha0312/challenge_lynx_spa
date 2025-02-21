@@ -1,0 +1,6 @@
+21/02/2025 11:03:17 - [Consulta] - Usuário buscou todos os equipamentos.
+21/02/2025 11:03:54 - [Cadastro] - Usuário cadastrou equipamento: {"Instalacao":"InstF","Fabricante":"Qualquer","Operadora":2,"Lote":7,"Modelo":7,"Versao":7}.
+21/02/2025 11:07:02 - [IMPORTACAO] - Usuário importou 4 registros via CSV.
+21/02/2025 11:08:02 - [Exclusão] - Usuário deletou equipamento com Instalação=InstA, Lote=1.
+21/02/2025 11:08:41 - [Alteração] - Usuário alterou equipamento com Instalação=InstB, Lote=2.
+21/02/2025 11:09:20 - [Consulta] - Usuário buscou equipamento com Instalação=InstC, Lote=3.
